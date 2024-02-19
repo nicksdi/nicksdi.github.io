@@ -5,18 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
     <title>Nick Sordi | Portfolio</title>
+    <style>
+        nav ul {
+            display: flex;
+            justify-content: space-between;
+            list-style-type: none;
+            padding: 0;
+        }
+        nav a {
+            text-decoration: none;
+            color: inherit;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #fff;
+            z-index: 1000;
+        }
+    </style>
 </head>
 <body>
-    <nav class="container-fluid">
+    <nav class="container-fluid sticky">
         <ul>
             <li><strong>Nick Sordi</strong></li>
-        </ul>
-        <ul>
+            <li><a href="#home">Home</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#updates">Updates</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
-    <main class="container">
+    <main class="container" id="home">
         <section>
             <h2>Welcome to My Website</h2>
             <p>This is a personal website where I share my projects and updates.</p>
@@ -27,19 +50,63 @@
                     <h2>Projects</h2>
                     <h3>A selection of my work</h3>
                 </hgroup>
-                <!-- Add project entries here -->
+                <div>
+                    <!-- Placeholder for a project entry -->
+                    <article>
+                        <h4>Project Title</h4>
+                        <p>Description of the project. What it does, technologies used, etc.</p>
+                        <a href="#">View Project</a>
+                    </article>
+                </div>
             </section>
             <section id="updates">
                 <hgroup>
                     <h2>Updates</h2>
                     <h3>What's new with me</h3>
                 </hgroup>
-                <!-- Add updates or blog posts here -->
+                <div>
+                    <!-- Placeholder for an update entry -->
+                    <article>
+                        <h4>Update Title</h4>
+                        <p>Short description or excerpt of the update.</p>
+                        <a href="#">Read More</a>
+                    </article>
+                </div>
             </section>
         </div>
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <form action="your-server-endpoint" method="POST">
+                <div>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div>
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit">Send</button>
+            </form>
+        </section>
     </main>
     <footer class="container">
-        <small>Contact information: <a href="nicholas.sordi@gmail.com">nicholas.sordi@gmail.com</a></small>
+        <small>Contact information: <a href="mailto:nicholas.sordi@gmail.com">nicholas.sordi@gmail.com</a></small>
     </footer>
+    <script>
+        window.onscroll = function() {myFunction()};
+        var navbar = document.querySelector("nav");
+        var sticky = navbar.offsetTop;
+        function myFunction() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
+    </script>
 </body>
 </html>
