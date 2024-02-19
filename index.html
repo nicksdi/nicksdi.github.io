@@ -12,9 +12,13 @@
             list-style-type: none;
             padding: 0;
         }
-        nav a {
+        nav a, nav strong {
             text-decoration: none;
             color: inherit;
+        }
+        .name {
+            font-weight: 800; /* Make the name even more bold */
+            font-size: 1.25rem; /* Optional: Increase the font size */
         }
         footer {
             text-align: center;
@@ -32,7 +36,7 @@
 <body>
     <nav class="container-fluid sticky">
         <ul>
-            <li><strong>Nick Sordi</strong></li>
+            <li><strong class="name">Nick Sordi</strong></li>
             <li><a href="#home">Home</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#updates">Updates</a></li>
